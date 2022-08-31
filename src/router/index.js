@@ -8,9 +8,24 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/destination/:slug",
-    name: "destination.show",
-    component: () => import("@/views/DetinationShow.vue"),
+    path: "/character",
+    name: "character",
+    component: () => import("@/views/Character.vue"),
+  },
+  {
+    path: "/character/:id",
+    name: "character.show",
+    component: () => import("@/views/CharacterDetail.vue"),
+  },
+  {
+    path: "/comics",
+    name: "comics",
+    component: () => import("@/views/ComicsView.vue"),
+  },
+  {
+    path: "/comics/:id",
+    name: "comics.show",
+    component: () => import("@/views/ComicDetails.vue"),
   },
 ];
 
