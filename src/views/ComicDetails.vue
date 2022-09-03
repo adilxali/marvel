@@ -33,7 +33,9 @@ onMounted(() => {
           <p class="card-text">
             ISBN: <small>{{ item.isbn }}</small>
           </p>
-          <p class="card-text">Price: <small>{{item.prices.price}}</small></p>
+          <p class="card-text">
+            Price: <small>{{ item.prices.price }}</small>
+          </p>
           <p class="card-text">
             Modified On :
             <small class="text-muted">{{ item.modified }}</small>

@@ -9,7 +9,11 @@ characterData();
   <h1>Characters</h1>
   <div class="container">
     <div class="row">
+      <div v-if="!character">
+        Loading...
+      </div>
       <div
+        v-else
         class="col-3 mx-auto"
         v-for="destination in character"
         :key="destination.id"

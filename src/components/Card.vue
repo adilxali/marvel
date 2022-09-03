@@ -7,7 +7,7 @@ defineProps({
 });
 </script>
 <template>
-  <div class="card" style="width: 18rem">
+  <div class="card m-3" style="width: 18rem">
     <router-link :to="path" class="text-decoration-none">
       <img
         :src="image"
