@@ -13,9 +13,7 @@ const nav = [
 ];
 </script>
 <template>
-  <nav
-    class="navbar navbar-dark bg-dark d-flex justify-content-center border-bottom"
-  >
+  <header class="bg-dark d-flex justify-content-center">
     <router-link to="/">
       <svg width="130" height="52" xmlns="http://www.w3.org/2000/svg">
         <rect fill="#EC1D24" width="100%" height="100%"></rect>
@@ -25,15 +23,17 @@ const nav = [
         ></path>
       </svg>
     </router-link>
-  </nav>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  </header>
+  <nav
+    class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs navbar-dark bg-dark"
+  >
     <div
       class="collapse navbar-collapse d-flex justify-content-center"
       id="navbarNav"
     >
       <ul class="navbar-nav">
         <li class="nav-item" v-for="menu in nav" :key="menu.id">
-          <router-link :to="menu.path" class="nav-link">{{
+          <router-link :to="menu.path" class="nav-link text-white">{{
             menu.title.toLocaleUpperCase()
           }}</router-link>
         </li>

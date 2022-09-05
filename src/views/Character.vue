@@ -7,18 +7,12 @@ characterData();
 </script>
 <template>
   <h1>Characters</h1>
-  <div class="container">
+  <div class="container-lg container-xs container-sm container-md">
     <div class="row">
-      <div v-if="!character">
-        Loading...
-      </div>
-      <div
-        v-else
-        class="col-3 mx-auto"
-        v-for="destination in character"
-        :key="destination.id"
-      >
+      <div class="col-12 d-flex flex-wrap justify-content-center">
         <Card
+          v-for="destination in character"
+          :key="destination.id"
           :path="{
             name: 'character.show',
             params: { id: destination.id },

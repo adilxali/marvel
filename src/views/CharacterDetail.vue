@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import Back from "@/components/Back.vue";
 const route = useRoute();
 
 const detail = ref([]);
@@ -17,6 +18,7 @@ onMounted(() => {
 });
 </script>
 <template>
+  <Back/>
   <div class="card mb-3" v-for="item in detail" :key="item.id">
     <div class="row g-0">
       <div class="col-md-4">
@@ -39,3 +41,8 @@ onMounted(() => {
     </div>
   </div>
 </template>
+<style>
+  .cursor-pointer {
+    cursor: pointer;
+  }
+</style>
