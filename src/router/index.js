@@ -27,7 +27,7 @@ const routes = [
   },
   {
     path: "/character/:id",
-    name: "character.show",
+    name: "characterShow",
     component: () => import("@/views/CharacterDetail.vue"),
   },
   {

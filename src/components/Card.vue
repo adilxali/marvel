@@ -7,9 +7,9 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="col-lg-3 col-xs-12 col-sm-6 col-md-6 p-1">
+  <div class="col-6 col-lg-3 col-xs-4 col-sm-4 col-md-4 p-1">
     <div class="card p-3" style="max-width: 18rem">
-      <router-link :to="path" class="text-decoration-none">
+      <router-link :to="props.path" class="text-decoration-none">
         <img
           :src="image"
           :alt="alt"

@@ -7,7 +7,7 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="card" style="max-width: 15rem">
+  <div class="card" style="max-width: fit-content">
     <div class="card-body text-dark">
       <img
         :src="image"

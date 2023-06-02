@@ -2,16 +2,18 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import Back from "@/components/Back.vue";
+const loading = ref(false);
 const route = useRoute();
 
 const detail = ref([]);
 
 const getData = async () => {
+  loading.value = true;
   await fetch(
     `https://gateway.marvel.com/v1/public/characters/${route.params.id}?ts=1660412526&apikey=5bf99f434c56b7b344223d891c551e4c&hash=f6e15b1a5fdd702ce8c364d031fc2acc`
   )
     .then((res) => res.json())
-    .then((data) => (detail.value = data.data.results));
+    .then((data) => (detail.value = data.data.results, loading.value = false));
 };
 onMounted(() => {
   getData();
@@ -19,6 +21,10 @@ onMounted(() => {
 </script>
 <template>
   <Back/>
+  <div v-if="loading" class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+  
   <div class="card mb-3" v-for="item in detail" :key="item.id">
     <div class="row g-0">
       <div class="col-md-4">
